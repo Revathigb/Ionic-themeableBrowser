@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { IonicPage, NavController, NavParams, IonicModule, Platform} from 'ionic-angular';
 import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@ionic-native/themeable-browser';
-
+import { TabsPage } from '../../pages/tabs/tabs';
 
 /**
  * Generated class for the Mediapage page.
@@ -14,32 +14,32 @@ import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } fro
   selector: 'page-mediapage',
   templateUrl: 'mediapage.html',
 })
+
 export class Mediapage {
   // var cordova: any;
+  rootPage: any = TabsPage;
 
   constructor(public themeableBrowser: ThemeableBrowser, public platform: Platform) {
 
 
   }
   openUrl() {
-
-
     this.platform.ready().then(() => {
       const options: ThemeableBrowserOptions = {
         statusbar: {
           color: ' #f0f0f0ff'
         },
-        // toolbar: {
-        //   height: 44,
-        //   color: '#f0f0f0ff'
-        // },
+        toolbar: {
+          height: 0,
+          color: '#f0f0f0ff'
+        },
         title: {
           color: '#994d00',
           staticText: ""
         },
         closeButton: {
           image: 'assets/images/close-icon-29.png',
-          imagePressed: 'close_button',
+          //imagePressed: 'close_button',
           align: 'left',
           event: 'closePressed'
         },
@@ -48,13 +48,17 @@ export class Mediapage {
         presentationstyle: 'pagesheet',
         allowInlineMediaPlayback: 'yes',
         toolbarposition: 'bottom',
-        closebuttoncaption: 'Return to HomePage'
+        closebuttoncaption: 'Return to HomePage',
+        backButtonCanClose: true
       }
 
+      // function closePressed() {
+      //   alert('close function');
+      //   this.close();
+      // }
 
 
-
-      this.themeableBrowser.create('https://ionic.io', '_blank', options);
+      this.themeableBrowser.create('https://google.com', '_blank', options);
 
     })
 
