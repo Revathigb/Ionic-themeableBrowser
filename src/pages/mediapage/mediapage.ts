@@ -30,7 +30,7 @@ export class Mediapage {
           color: ' #f0f0f0ff'
         },
         toolbar: {
-          height: 0,
+          height: 44,
           color: '#f0f0f0ff'
         },
         title: {
@@ -38,14 +38,14 @@ export class Mediapage {
           staticText: ""
         },
         closeButton: {
-          image: 'assets/images/close-icon-29.png',
+          image: 'www/assets/images/close.png',
           //imagePressed: 'close_button',
           align: 'left',
           event: 'closePressed'
         },
 
-        transitionstyle: 'fliphorizontal',
-        presentationstyle: 'pagesheet',
+        //transitionstyle: 'fliphorizontal',
+        //presentationstyle: 'pagesheet',
         allowInlineMediaPlayback: 'yes',
         toolbarposition: 'bottom',
         closebuttoncaption: 'Return to HomePage',

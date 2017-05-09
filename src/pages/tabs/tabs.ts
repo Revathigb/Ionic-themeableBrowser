@@ -12,7 +12,7 @@ export class TabsPage {
 
   tab1Root = Mediapage;
   tab2Root = Radiopage;
-  tab3Root = Radiopage;
+  tab3Root = Newspage;
 
 
   constructor() {
