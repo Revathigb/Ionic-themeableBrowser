@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { IonicPage, NavController, NavParams, IonicModule, Platform} from 'ionic-angular';
 import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@ionic-native/themeable-browser';
-import { TabsPage } from '../../pages/tabs/tabs';
+
 
 /**
  * Generated class for the Mediapage page.
@@ -16,13 +16,13 @@ import { TabsPage } from '../../pages/tabs/tabs';
 })
 
 export class Mediapage {
-  // var cordova: any;
-  rootPage: any = TabsPage;
+
 
   constructor(public themeableBrowser: ThemeableBrowser, public platform: Platform) {
 
 
   }
+
   openUrl() {
     this.platform.ready().then(() => {
       const options: ThemeableBrowserOptions = {
@@ -35,30 +35,35 @@ export class Mediapage {
         },
         title: {
           color: '#994d00',
-          staticText: ""
+        },
+        backButton: {
+          image: 'www/assets/images/backward.png',
+          imagePressed: 'back_pressed',
+          align: 'left',
+          event: 'backPressed'
+        },
+        forwardButton: {
+          image: 'www/assets/images/forward.png',
+          imagePressed: 'forward_pressed',
+          align: 'left',
+          event: 'forwardPressed'
         },
         closeButton: {
           image: 'www/assets/images/close.png',
-          //imagePressed: 'close_button',
           align: 'left',
           event: 'closePressed'
         },
 
-        //transitionstyle: 'fliphorizontal',
-        //presentationstyle: 'pagesheet',
-        allowInlineMediaPlayback: 'yes',
+        transitionstyle: 'fliphorizontal',
         toolbarposition: 'bottom',
-        closebuttoncaption: 'Return to HomePage',
+        allowInlineMediaPlayback: 'yes',
         backButtonCanClose: true
       }
-
-      // function closePressed() {
-      //   alert('close function');
-      //   this.close();
-      // }
-
-
-      this.themeableBrowser.create('https://google.com', '_blank', options);
+      var browser = this.themeableBrowser.create('http://thedailycougar.com/', '_blank', options);
+      // browser.on("closePressed")
+      //   .subscribe(() => {
+      //     console.log("Close function: ");
+      //   });
 
     })
 

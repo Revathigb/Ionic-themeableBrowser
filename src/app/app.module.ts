@@ -8,6 +8,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { Mediapage } from '../pages/mediapage/mediapage';
 import { TabsPage }  from '../pages/tabs/tabs';
+import { Radiopage } from '../pages/radiopage/radiopage';
+import { Newspage } from '../pages/newspage/newspage';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -19,6 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     Mediapage,
     TabsPage,
+    Radiopage,
+    Newspage,
     ListPage
   ],
   imports: [
@@ -30,7 +34,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     Mediapage,
+    Radiopage,
     TabsPage,
+    Newspage,
     ListPage
   ],
   providers: [

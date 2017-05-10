@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HomePage } from '../home/home';
-import { ListPage } from '../list/list';
 import { Mediapage } from '../mediapage/mediapage';
 import { Radiopage } from '../radiopage/radiopage';
 import { Newspage } from '../newspage/newspage';
@@ -10,9 +8,9 @@ import { Newspage } from '../newspage/newspage';
 })
 export class TabsPage {
 
-  tab1Root = Mediapage;
+  tab1Root = Newspage;
   tab2Root = Radiopage;
-  tab3Root = Newspage;
+  tab3Root = Mediapage;
 
 
   constructor() {
