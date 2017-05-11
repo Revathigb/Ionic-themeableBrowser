@@ -1,23 +1,29 @@
-import { Component } from '@angular/core';
+import { Directive} from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@ionic-native/themeable-browser';
-/**
- * Generated class for the Newspage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-@IonicPage()
-@Component({
-  selector: 'page-newspage',
-  templateUrl: 'newspage.html',
-})
-export class Newspage {
 
-  constructor(public themeableBrowser: ThemeableBrowser, public platform: Platform) {
+/**
+ * Generated class for the AppBrowserDirective directive.
+ *
+ * See https://angular.io/docs/ts/latest/api/core/index/DirectiveMetadata-class.html
+ * for more info on Angular Directives.
+ */
+@Directive({
+  selector: '[app-browser]' // Attribute selector
+})
+export class AppBrowserDirective {
+
+
+
+  constructor(public navParams: NavParams, public themeableBrowser: ThemeableBrowser, public platform: Platform) {
+    console.log('Hello AppBrowserDirective Directive');
+    //  this.link = el.nativeElement.value;
+
   }
 
-  OpenBrowser() {
+
+  appbrowserurl(value) {
+    //  console.log(value);
     this.platform.ready().then(() => {
       const options: ThemeableBrowserOptions = {
 
@@ -49,14 +55,9 @@ export class Newspage {
           event: 'closePressed'
         },
       }
-      const browser: ThemeableBrowserObject = this.themeableBrowser.create('https://ionic.io', '_blank', options);
-      // browser.on("closePressed")
-      //   .subscribe(() => {
-      //     console.log("Close function: ");
-      //   });
 
+      const browser: ThemeableBrowserObject = this.themeableBrowser.create(value, '_blank', options);
     })
 
   }
-
 }

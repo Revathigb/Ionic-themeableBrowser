@@ -13,10 +13,12 @@
     </button>
     <ion-title>mediapage</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-  <button ion-button secondary (click)="openUrl()">Click ME!</button>
+<ion-content>
+
+
+  <button app-browser ion-button secondary (click)="click('http://thedailycougar.com/')">Click ME</button>
+  <!-- <a app-browser href="# " data="https://www.google.com ">Link Themeable Browser</a> -->
 </ion-content>

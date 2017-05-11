@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>newspage</ion-title>
   </ion-navbar>
 
@@ -14,5 +17,6 @@
 
 
 <ion-content padding>
-  This is the news page
+
+  <button ion-button secondary (click)="OpenBrowser()">Click</button>
 </ion-content>

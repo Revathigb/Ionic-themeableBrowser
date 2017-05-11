@@ -1,6 +1,8 @@
-import { Component, NgModule } from '@angular/core';
-import { IonicPage, NavController, NavParams, IonicModule, Platform} from 'ionic-angular';
-import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@ionic-native/themeable-browser';
+import { Component, NgModule, ViewChild} from '@angular/core';
+import { IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import { AppBrowserDirective } from '../../directives/app-browser/app-browser';
+
+
 
 
 /**
@@ -15,57 +17,22 @@ import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } fro
   templateUrl: 'mediapage.html',
 })
 
+
 export class Mediapage {
 
-
-  constructor(public themeableBrowser: ThemeableBrowser, public platform: Platform) {
-
-
+  public resources;
+  @ViewChild(AppBrowserDirective) AppBrowserDirective;
+  constructor(public platform: Platform) {
+    // this.resources = [
+    //   {name: "google", url: "www.google.com"},
+    //   {name: "facebook", url: "www.facebook.com"},
+    //   {name: "yahoo", url: "www.yahoo.com"}
+    // ]
   }
 
-  openUrl() {
-    this.platform.ready().then(() => {
-      const options: ThemeableBrowserOptions = {
-        statusbar: {
-          color: ' #f0f0f0ff'
-        },
-        toolbar: {
-          height: 44,
-          color: '#f0f0f0ff'
-        },
-        title: {
-          color: '#994d00',
-        },
-        backButton: {
-          image: 'www/assets/images/backward.png',
-          imagePressed: 'back_pressed',
-          align: 'left',
-          event: 'backPressed'
-        },
-        forwardButton: {
-          image: 'www/assets/images/forward.png',
-          imagePressed: 'forward_pressed',
-          align: 'left',
-          event: 'forwardPressed'
-        },
-        closeButton: {
-          image: 'www/assets/images/close.png',
-          align: 'left',
-          event: 'closePressed'
-        },
 
-        transitionstyle: 'fliphorizontal',
-        toolbarposition: 'bottom',
-        allowInlineMediaPlayback: 'yes',
-        backButtonCanClose: true
-      }
-      var browser = this.themeableBrowser.create('http://thedailycougar.com/', '_blank', options);
-      // browser.on("closePressed")
-      //   .subscribe(() => {
-      //     console.log("Close function: ");
-      //   });
-
-    })
-
+  click(url) {
+    this.AppBrowserDirective.appbrowserurl(url);                 ///<<@@@ no need to use nativeElement
   }
+
 }

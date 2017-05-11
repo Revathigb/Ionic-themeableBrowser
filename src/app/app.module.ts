@@ -14,6 +14,7 @@ import { Newspage } from '../pages/newspage/newspage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AppBrowserDirective } from '../directives/app-browser/app-browser';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     Radiopage,
     Newspage,
-    ListPage
+    ListPage,
+    AppBrowserDirective
   ],
   imports: [
     BrowserModule,
